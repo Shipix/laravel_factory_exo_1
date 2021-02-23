@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Batiment;
+use App\Models\Eleve;
+use App\Models\Formation;
+use App\Models\TypeFormation;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Eleve::factory()->count(50)->create();
+        $this->call(
+            [
+                BatimentSeeder::class,
+                FormationSeeder::class,
+                TypeFormationSeeder::class,
+
+            ]
+        );
     }
 }

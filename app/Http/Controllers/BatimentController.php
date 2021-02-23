@@ -14,7 +14,8 @@ class BatimentController extends Controller
      */
     public function index()
     {
-        //
+        $databat=Batiment::all();
+        return view('batiment',compact('databat'));
     }
 
     /**

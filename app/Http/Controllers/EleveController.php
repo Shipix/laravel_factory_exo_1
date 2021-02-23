@@ -14,7 +14,8 @@ class EleveController extends Controller
      */
     public function index()
     {
-        //
+        $dataeleve=Eleve::all();
+        return view('eleve',compact('dataeleve'));
     }
 
     /**
